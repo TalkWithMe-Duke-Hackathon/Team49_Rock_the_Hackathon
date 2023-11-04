@@ -178,7 +178,6 @@ def ackaud():
     else:
         print("The 'NBest' field does not exist in the JSON response.")
 
-
     return response.json()
 
 @app.route("/gettts", methods=["POST"])

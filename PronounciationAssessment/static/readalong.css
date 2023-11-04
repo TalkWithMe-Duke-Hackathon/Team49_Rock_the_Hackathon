@@ -136,7 +136,7 @@ button span {
         opacity: 0;
     }
 }
-}
+
 @media only screen and (max-width: 500px) {
     button {
         font-size: 18px;

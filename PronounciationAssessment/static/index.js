@@ -14,11 +14,11 @@
     var phonemerow = document.getElementById('phonemerow');
     var scorerow = document.getElementById('scorerow');
 
-    var fileInput = document.getElementById('txtFile');
+    // var fileInput = document.getElementById('txtFile');
     // code I added above
     var reftext = document.getElementById('reftext');
     var formcontainer = document.getElementById('formcontainer');
-    var ttbutton = document.getElementById('randomtt');
+    // var ttbutton = document.getElementById('randomtt');
     var hbutton = document.getElementById('buttonhear');
     var recordingsList = document.getElementById('recordingsList');
     var ttsList = document.getElementById('ttsList');
@@ -297,25 +297,25 @@
     }
 
     //function for onclick of get tongue twister button
-    ttbutton.onclick = function () {
-        var request = new XMLHttpRequest();
-        request.open('POST', '/gettonguetwister', true);
+    // ttbutton.onclick = function () {
+    //     var request = new XMLHttpRequest();
+    //     request.open('POST', '/gettonguetwister', true);
 
-        // Callback function for when request completes
-        request.onload = () => {
-            // Extract JSON data from request
-            const data = JSON.parse(request.responseText);
-            reftextval = data.tt;
-            reftext.value = reftextval;
-            reftext.innerText = reftextval;
+    //     // Callback function for when request completes
+    //     request.onload = () => {
+    //         // Extract JSON data from request
+    //         const data = JSON.parse(request.responseText);
+    //         reftextval = data.tt;
+    //         reftext.value = reftextval;
+    //         reftext.innerText = reftextval;
 
-        }
+    //     }
         
-        //send request
-        request.send();
+    //     //send request
+    //     request.send();
 
-        return false;
-    }
+    //     return false;
+    // }
 
     //function for handling main button clicks
     document.getElementById('buttonmic').onclick = function () {
@@ -351,8 +351,8 @@
                 start = true;
                 reftext.readonly = true;
                 reftext.disabled = true;
-                ttbutton.disabled = true;
-                ttbutton.className = "btn";
+                // ttbutton.disabled = true;
+                // ttbutton.className = "btn";
                 reftextval = reftext.value;
     
                 this.innerHTML = "<span class='fa fa-stop'></span>Stop";
