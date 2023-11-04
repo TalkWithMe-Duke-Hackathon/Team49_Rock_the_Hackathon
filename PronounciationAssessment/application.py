@@ -5,7 +5,7 @@ import time
 import random
 import azure.cognitiveservices.speech as speechsdk
 import os
-
+import csv
 from flask import Flask, jsonify, render_template, request, make_response
 
 app = Flask(__name__)
@@ -14,6 +14,8 @@ subscription_key = '0e7b29909ab741cfa1f9b05bfe012e71'
 region = "eastus"
 language = "en-US"
 voice = "Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)"
+
+i = 0
 
 @app.route("/")
 def index():
@@ -33,62 +35,62 @@ def gettoken():
     access_token = response.text
     return jsonify({"at":access_token})
 
-
-@app.route("/gettonguetwister", methods=["POST"])
-def gettonguetwister():
-    tonguetwisters = ["How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
-            "She sells seashells by the seashore.",
-            "We surely shall see the sun shine soon.",
-            "Lesser leather never weathered wetter weather better.",
-            "I scream, you scream, we all scream for ice cream.",
-            "Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines.",
-            "Six sticky skeletons. Six sticky skeletons. Six sticky skeletons.",
-            "Black back bat. Black back bat. Black back bat.",
-            "She sees cheese. She sees cheese. She sees cheese.",
-            "Two tried and true tridents. Two tried and true tridents. Two tried and true tridents.",
-            "Thin sticks, thick bricks. Thin sticks, thick bricks. Thin sticks, thick bricks.",
-            "Truly rural. Truly rural. Truly rural.",
-            "Black background, brown background",
-            "Blue blood, bad blood. Blue blood, bad blood. Blue blood, bad blood.",
-            "Red lorry, yellow lorry. Red lorry, yellow lorry. Red lorry, yellow lorry.",
-            "I slit the sheet, the sheet I slit, and on the slitted sheet I sit"]
+# @app.route("/gettonguetwister", methods=["POST"])
+# def gettonguetwister():
+#     tonguetwisters = ["How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+#             "She sells seashells by the seashore.",
+#             "We surely shall see the sun shine soon.",
+#             "Lesser leather never weathered wetter weather better.",
+#             "I scream, you scream, we all scream for ice cream.",
+#             "Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines.",
+#             "Six sticky skeletons. Six sticky skeletons. Six sticky skeletons.",
+#             "Black back bat. Black back bat. Black back bat.",
+#             "She sees cheese. She sees cheese. She sees cheese.",
+#             "Two tried and true tridents. Two tried and true tridents. Two tried and true tridents.",
+#             "Thin sticks, thick bricks. Thin sticks, thick bricks. Thin sticks, thick bricks.",
+#             "Truly rural. Truly rural. Truly rural.",
+#             "Black background, brown background",
+#             "Blue blood, bad blood. Blue blood, bad blood. Blue blood, bad blood.",
+#             "Red lorry, yellow lorry. Red lorry, yellow lorry. Red lorry, yellow lorry.",
+#             "I slit the sheet, the sheet I slit, and on the slitted sheet I sit"]
     
-    return jsonify({"tt":random.choice(tonguetwisters)})
+#     return jsonify({"tt":random.choice(tonguetwisters)})
 
-@app.route("/getstory", methods=["POST"])
-def getstory():
-    id = int(request.form.get("id"))
-    stories = [["Read aloud the sentences on the screen.",
-        "We will follow along your speech and help you learn speak English.",
-        "Good luck for your reading lesson!"],
-        ["The Hare and the Tortoise",
-        "Once upon a time, a Hare was making fun of the Tortoise for being so slow.",
-        "\"Do you ever get anywhere?\" he asked with a mocking laugh.",
-        "\"Yes,\" replied the Tortoise, \"and I get there sooner than you think. Let us run a race.\"",
-        "The Hare was amused at the idea of running a race with the Tortoise, but agreed anyway.",
-        "So the Fox, who had consented to act as judge, marked the distance and started the runners off.",
-        "The Hare was soon far out of sight, and in his overconfidence,",
-        "he lay down beside the course to take a nap until the Tortoise should catch up.",
-        "Meanwhile, the Tortoise kept going slowly but steadily, and, after some time, passed the place where the Hare was sleeping.",
-        "The Hare slept on peacefully; and when at last he did wake up, the Tortoise was near the goal.",
-        "The Hare now ran his swiftest, but he could not overtake the Tortoise in time.",
-        "Slow and Steady wins the race."],
-        ["The Ant and The Dove",
-        "A Dove saw an Ant fall into a brook.",
-        "The Ant struggled in vain to reach the bank,",
-        "and in pity, the Dove dropped a blade of straw close beside it.",
-        "Clinging to the straw like a shipwrecked sailor, the Ant floated safely to shore.",
-        "Soon after, the Ant saw a man getting ready to kill the Dove with a stone.",
-        "Just as he cast the stone, the Ant stung the man in the heel, and he missed his aim,",
-        "The startled Dove flew to safety in a distant wood and lived to see another day.",
-        "A kindness is never wasted."]]
-    if(id >= len(stories)):
-        return jsonify({"code":201})
-    else:
-        return jsonify({"code":200,"storyid":id , "storynumelements":len(stories[id]),"story": stories[id]})
+# @app.route("/getstory", methods=["POST"])
+# def getstory():
+#     id = int(request.form.get("id"))
+#     stories = [["Read aloud the sentences on the screen.",
+#         "We will follow along your speech and help you learn speak English.",
+#         "Good luck for your reading lesson!"],
+#         ["The Hare and the Tortoise",
+#         "Once upon a time, a Hare was making fun of the Tortoise for being so slow.",
+#         "\"Do you ever get anywhere?\" he asked with a mocking laugh.",
+#         "\"Yes,\" replied the Tortoise, \"and I get there sooner than you think. Let us run a race.\"",
+#         "The Hare was amused at the idea of running a race with the Tortoise, but agreed anyway.",
+#         "So the Fox, who had consented to act as judge, marked the distance and started the runners off.",
+#         "The Hare was soon far out of sight, and in his overconfidence,",
+#         "he lay down beside the course to take a nap until the Tortoise should catch up.",
+#         "Meanwhile, the Tortoise kept going slowly but steadily, and, after some time, passed the place where the Hare was sleeping.",
+#         "The Hare slept on peacefully; and when at last he did wake up, the Tortoise was near the goal.",
+#         "The Hare now ran his swiftest, but he could not overtake the Tortoise in time.",
+#         "Slow and Steady wins the race."],
+#         ["The Ant and The Dove",
+#         "A Dove saw an Ant fall into a brook.",
+#         "The Ant struggled in vain to reach the bank,",
+#         "and in pity, the Dove dropped a blade of straw close beside it.",
+#         "Clinging to the straw like a shipwrecked sailor, the Ant floated safely to shore.",
+#         "Soon after, the Ant saw a man getting ready to kill the Dove with a stone.",
+#         "Just as he cast the stone, the Ant stung the man in the heel, and he missed his aim,",
+#         "The startled Dove flew to safety in a distant wood and lived to see another day.",
+#         "A kindness is never wasted."]]
+#     if(id >= len(stories)):
+#         return jsonify({"code":201})
+#     else:
+#         return jsonify({"code":200,"storyid":id , "storynumelements":len(stories[id]),"story": stories[id]})
 
 @app.route("/ackaud", methods=["POST"])
 def ackaud():
+    global i
     f = request.files['audio_data']
     reftext = request.form.get("reftext")
     #    f.save(audio)
@@ -131,6 +133,51 @@ def ackaud():
 
     #latency = getResponseTime - uploadFinishTime
     #print("Latency = %sms" % int(latency * 1000))
+
+    # extract 'AccuracyScore', 'FluencyScore', 'CompletenessScore', 'PronScore': 98.8 from json
+    # Parse the JSON data
+    data_dict = response.json()
+
+    # Check if "NBest" exists in the JSON response
+    if "NBest" in data_dict:
+        # Extract the values
+        accuracy_score = data_dict["NBest"][0]["AccuracyScore"]
+        fluency_score = data_dict["NBest"][0]["FluencyScore"]
+        completeness_score = data_dict["NBest"][0]["CompletenessScore"]
+        pron_score = data_dict["NBest"][0]["PronScore"]
+
+        # Write the scores to a CSV file
+
+        # Read the CSV file to find the last index
+        last_index = None
+        if os.path.exists('scores.csv'):
+            with open('scores.csv', 'r', newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    last_index = int(row['Index'])
+
+        # If the file is empty, initialize last_index to -1
+        if last_index is None:
+            last_index = -1
+
+        # Increment the index for the next row
+        i = last_index + 1
+
+        # Write the new data to the CSV file
+        with open('scores.csv', 'a', newline='') as csvfile:
+            # print("I am HERE")
+            fieldnames = ['Index', 'AccuracyScore', 'FluencyScore', 'CompletenessScore', 'PronScore']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            # Check if the file is empty and write the header if needed
+            if csvfile.tell() == 0:
+                writer.writeheader()
+
+            writer.writerow({'Index': i, 'AccuracyScore': accuracy_score, 'FluencyScore': fluency_score, 'CompletenessScore': completeness_score, 'PronScore': pron_score})
+
+    else:
+        print("The 'NBest' field does not exist in the JSON response.")
+
 
     return response.json()
 
@@ -177,6 +224,7 @@ def gettts():
         if cancellation_details.reason == speechsdk.CancellationReason.Error:
             print("Error details: {}".format(cancellation_details.error_details))
         return jsonify({"success":False})
+
 
 @app.route("/getttsforword", methods=["POST"])
 def getttsforword():

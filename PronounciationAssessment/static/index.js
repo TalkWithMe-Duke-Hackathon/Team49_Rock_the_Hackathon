@@ -14,6 +14,8 @@
     var phonemerow = document.getElementById('phonemerow');
     var scorerow = document.getElementById('scorerow');
 
+    var fileInput = document.getElementById('txtFile');
+    // code I added above
     var reftext = document.getElementById('reftext');
     var formcontainer = document.getElementById('formcontainer');
     var ttbutton = document.getElementById('randomtt');
@@ -142,8 +144,20 @@
             }
             c += 1;
           }
-
     }
+
+    // code I added
+    // txtFileInput.addEventListener("change", function(event){
+    //     const file = event.target.files[0];
+    //     if(file){
+    //         const reader = new FileReader();
+    //         // reader.onload = function(e) {
+    //         //     const fileContent = e.target.result;
+    //         //     // do something here
+    //         // };
+    //         reader.readAsText(file);
+    //     }
+    // });
     
     var soundAllowed = function (stream) {
         permission = true;
@@ -215,6 +229,47 @@
                 getttsforword(wordlist[i]);
             }
             
+        // } else if(fileInput.files.length > 0){
+        //     const file = fileInput.files[0];
+        //     const formData = new FormData();
+        //     formData.append('txtFile', file);
+    
+        //     fetch('/gettts', {
+        //         method: 'POST',
+        //         body: formData,
+        //     })
+        //     .then(response => response.text())
+        //     .then(data => {
+        //         // Handle the response, e.g., update UI with TTS audio or text content
+        //         var blobpronun = data;
+        //         var offsets = request.getResponseHeader("offsets");
+        //         offsetsarr = offsets.substring(1,offsets.length - 1).replace(/ /g, "").split(',').map(Number);;
+
+        //         objectUrlMain = URL.createObjectURL(blobpronun);
+
+        //         var au = document.createElement('audio');
+        //         var li = document.createElement('p');
+            
+        //         //add controls to the <audio> element
+        //         au.controls = true;
+        //         au.autoplay = true;
+        //         au.id = "ttsaudio"
+        //         au.src = objectUrlMain;
+            
+        //         //add the new audio element to li
+        //         li.appendChild(au);
+                    
+        //         //add the li element to the ol
+        //         if(ttsList.hasChildNodes()){
+        //             ttsList.lastChild.remove();
+        //         }
+        //         ttsList.appendChild(li);
+
+        //         document.getElementById("ttsloader").style.display = "none";
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
         }
         else{
             console.log("TTS Audio for given text already exists. You may change ref text");
