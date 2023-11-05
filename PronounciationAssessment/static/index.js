@@ -145,7 +145,7 @@
             c += 1;
           }
     }
-
+    
     // code added
     // txtFileInput.addEventListener("change", function(event){
     //     const file = event.target.files[0];
@@ -502,3 +502,31 @@
         
         return false;        
     }
+
+    // Get the modal and the button that opens it
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('button_Report');
+var closeBtn = document.getElementsByClassName('close')[0];
+
+// Function to open the modal
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Attach click event to the button to open the modal
+btn.addEventListener('click', openModal);
+
+// Attach click event to the close button to close the modal
+closeBtn.addEventListener('click', closeModal);
+
+// Close the modal if the user clicks outside the modal content
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
