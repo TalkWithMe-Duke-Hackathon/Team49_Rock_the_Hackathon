@@ -1,2 +1,3 @@
-# Team49_Rock_the_Hackathon
+# Team49_TalkWithMe_AI_Pronunciation_Training
+
 This  is for our language learning AI project.
