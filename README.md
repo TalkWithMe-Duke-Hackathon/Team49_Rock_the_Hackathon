@@ -3,7 +3,7 @@ This  is for our language learning AI project.
 
 ## Technical Implementation
 
-The general pipeline is divided into two independent processes: Text-to-Speech (TTS) and Automatic Pronounciation Assessment (APA). Both are done with the help of **[Microsoft Azure](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&OCID=AIDcmm5edswduu_SEM__k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&gad=1&gclid=CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE)**.
+The general pipeline for our Minimum-Viable-Product is divided into two independent processes: Text-to-Speech (TTS) and Automatic Pronunciation Assessment (APA). Both are done with the help of **[Microsoft Azure](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&OCID=AIDcmm5edswduu_SEM__k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&gad=1&gclid=CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE)**.
 
 ### Text-to-Speech (TTS)
 
