@@ -1,4 +1,4 @@
-# Team49_TalkWithMe_AI_Pronunciation_Training
+# Team49_TalkWithMe_AI_Language_Training
 
 TalkwithMe applies Azure Text-to-Speech, Pronunciation Assessment API, creating user with  customized immersive language learning experience, via AI voice generation, recognition, and study methods recommendation.
 
