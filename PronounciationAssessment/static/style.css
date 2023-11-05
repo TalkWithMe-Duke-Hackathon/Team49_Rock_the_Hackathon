@@ -81,6 +81,12 @@ button span {
 .green-button:hover {
     background-color: #3e8e41;
 }
+.orange-button{
+    background-color: rgba(234, 142, 29, 0.448);
+}
+.orange-button:hover{
+    background-color: #4CAF50;
+}
 .h-button {
     background-color: #b5b5b5;
 }
