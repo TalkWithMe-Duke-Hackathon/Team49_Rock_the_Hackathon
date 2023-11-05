@@ -5,7 +5,11 @@ html, body {
     margin-right: 5%;
     padding-top: 10px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #012169;
+    /* background-image: url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 #reftexthead{
     font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +21,7 @@ html, body {
     border-radius: 3px;
 }
 #ttscont {
-    background-color: rgb(237, 245, 245);
+    background-color: #012169;
 }
 #recordcont {
     background-color: rgba(172, 255, 47, 0.055);
@@ -78,10 +82,10 @@ button span {
     background-color: #3e8e41;
 }
 .h-button {
-    background-color: rgb(77, 155, 155);
+    background-color: #b5b5b5;
 }
 .h-button:hover {
-    background-color: rgb(28, 117, 117);
+    background-color: #e5e5e5;
 }
 .blue-button {
     background-color: rgb(60, 128, 170);
@@ -191,4 +195,29 @@ footer{
     button {
         font-size: 18px;
     }
+}
+
+#file-input {
+    display: none;
+  }
+
+#file-input-label {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    color: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 3%;
+    border-radius: 12px;
+}
+
+#file-input-label:hover {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    color: black;
+    background-color: #b5b5b5; /* Background color on hover */
+    border: 1px solid #b5b5b5;
+    border-radius: 3%;
+    border-radius: 12px;
 }

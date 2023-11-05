@@ -10,17 +10,20 @@
 </head>
 
 <body>  
-    
+    <div style="text-align: center;">
+        <p style="font-size: 48px; font-family: Arial, Helvetica, sans-serif; color: #b4b5bb;">Talk with Me</p>
+    </div>
+
     <div class="container" id="ttscont">
         <div class="button-container">
             <button id="buttonhear" class="h-button">
                 <span class="fas fa-headphones"></span>Learn Pronunciation</button>
         </div> 
-
         <div id="ttsList"></div>
         <div class="container" id="ttsloader">
             <div id="loader"></div>
         </div> 
+        <br>
     </div>
 
     <div class=container id="formcontainer">
@@ -28,10 +31,9 @@
             <textarea id="reftext" rows="3" cols="80" name="reftext" maxlength="160" autofocus placeholder="Enter Text here..." style="font-size: 14px;"></textarea>
         </form>        
         <br>
-        <!-- <form id="fileUploadForm">
-            <input type="file" id="txtFile" accept=".txt">
-        </form>
-        <br> -->
+        <input type="file" id="file-input" name="file-input" />
+        <label id="file-input-label" for="file-input">Upload Text</label>
+        <br>
     </div>
 
     <div class="button-container">
@@ -86,7 +88,7 @@
 
     </div>
     
-    <footer id=footeralert>Please allow the use of your microphone.</footer>
+    <footer id=footeralert style="color:#b4b5bb">Please allow the use of your microphone.</footer>
     
     <script src="{{ url_for('static', filename='index.js') }}"></script>
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
