@@ -10,6 +10,10 @@ Furthermore, the absence of immersive learning experiences tends to "Impede the 
 
 Moreover, "Stumbling expressions" become common as learners may not have had the opportunity to practice and refine their conversational skills adequately. Finally, the absence of personalized and adaptive learning environments exacerbates these challenges, leading to "Lack of personalized adaptive learning." Customized learning experiences that adapt to individual needs are often unavailable, making it challenging for learners to progress effectively.
 
+## Our Solution
+
+Our solution to address the challenges faced by new language learners is the development of an AI learning companion. This companion will be designed to create a "Personalized Immersive Learning Experience." By leveraging advanced AI technologies, we aim to offer learners a tailored and immersive journey in acquiring a new language.
+
 ## Technical Implementation
 
 The general pipeline for our Minimum-Viable-Product is divided into two independent processes: Text-to-Speech (TTS) and Automatic Pronunciation Assessment (APA). Both are done with the help of **[Microsoft Azure](https://azure.microsoft.com/en-us/free/search/?ef_id=_k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&OCID=AIDcmm5edswduu_SEM__k_CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE_k_&gad=1&gclid=CjwKCAjw15eqBhBZEiwAbDomEqJHzKIdDb3EXzngazXRBcXGBwcnP4fKw2BnVqETMTNAGD9pMCY4MhoCgFwQAvD_BwE)**.
