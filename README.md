@@ -1,6 +1,8 @@
 # Team49_TalkWithMe_AI_Language_Training
 
-TalkwithMe applies Azure Text-to-Speech, Pronunciation Assessment API, creating user with  customized immersive language learning experience, via AI voice generation, recognition, and study methods recommendation.
+TalkwithMe applies Azure Text-to-Speech, Pronunciation Assessment API, creating user with  customized immersive language learning experience, via AI voice generation, recognition, and study methods recommendation.  
+
+<img decoding="async" src="cover_page.jpg" width="85%">
 
 ## Problem Statement
 
@@ -39,6 +41,8 @@ The four most significant features are extracted from the JSON results and store
 2. **Fluency Score**: The fluency score measures the smoothness and flow of the spoken words and phrases, giving users valuable feedback on their fluency.
 3. **Completeness Score**: This score assesses how comprehensively the user pronounces words and ensures that no parts of the text are omitted.
 4. **Pronunciation Score**: The overall pronunciation score combines various aspects of pronunciation quality and fluency, offering a comprehensive evaluation of the user's spoken language.
+
+<img decoding="async" src="assessment.png" width="85%">
 
 ## Commercial Viability
 
