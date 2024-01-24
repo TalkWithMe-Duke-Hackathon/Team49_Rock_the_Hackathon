@@ -1,4 +1,6 @@
-# Team49_TalkWithMe_AI_Language_Training
+# TalkWithMe: AI Language Education
+
+2023 Duke x OpenAI x Microsoft Hackathon Winner (Beginner Track). 
 
 TalkwithMe applies Azure Text-to-Speech, Pronunciation Assessment API, creating user with  customized immersive language learning experience, via AI voice generation, recognition, and study methods recommendation.  
 
