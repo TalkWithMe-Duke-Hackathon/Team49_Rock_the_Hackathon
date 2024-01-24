@@ -4,6 +4,8 @@
 
 TalkwithMe applies Azure Text-to-Speech, Pronunciation Assessment API, creating user with  customized immersive language learning experience, via AI voice generation, recognition, and study methods recommendation.  
 
+https://youtu.be/B5AHdulagaM?si=DSk08R57K-kkknZk
+
 <img decoding="async" src="cover_page.jpg" width="85%">
 
 ## Problem Statement
